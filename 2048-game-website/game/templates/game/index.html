@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{% include 'material/includes/material_css.html' %}
+	{% block extrahead %}{% endblock %}
+	<style type="text/css">
+	body{
+		background-image: url("../../../static/game/images/background-2.jpg");
+		background-size: cover;
+	}
+	.card-panel{
+		background-image: url("../../../static/game/images/6809725-simple-vintage-backgrounds.jpg");
+		background-size: cover;
+		color: black;
+
+	}
+	.card-panel form label{
+		color: black;
+	}
+	</style>
+</head>
+<body>
+{% include 'game/nav.html' %}
+<main class='container'>
+{% block content %}
+{% endblock %}
+</main>
+<script src="{% static 'account/js/jquery-2.2.1.min.js' %}"></script>
+{% include 'material/includes/material_js.html' %}
+       {% block scripts %} {% endblock %}
+
+
+</body>
+</html>

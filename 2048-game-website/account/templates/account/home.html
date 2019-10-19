@@ -1,0 +1,40 @@
+{% extends 'game/index.html' %}
+{% block title %}home{% endblock %}
+{% load staticfiles %}
+{% block extrahead %}
+<link href='{% static 'account/css/home.css' %}' rel='stylesheet'>
+{% endblock %}
+{% block content %}
+<div class='row'>
+<div class='col s12 red'>
+<div class='cardpanel'>
+<div class='row'>
+<div class='col s3 m3 l3'>
+<div class='row id="dia"'><img src='{% static 'images/logo.png' %}'></div>
+<div class='row'><a href='{% url 'home' id=user.id %}'>Home</a></div>
+</div>
+<div class='col s2 m2 l2'><a href='{% url 'add' %}'>+</a></div>
+<div class='col s2 m2 l2'><a href='{% url 'list' %}'>all Questions</a></div>
+<div class='col s2 m2 l2'><a href='{% url 'myques' %}'>My Questions</a></div>
+<div class='col s3 m3 l3'>
+<div class='row'>{{user.username}}</div>
+<div class='row'><a href='{% url 'logout' %}'>logout</a></div>
+<div class='row'><a href='{% url 'change' %}'>change password</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col s12'>
+<ol>
+{% for item in q %}
+<li><p>{{item.created_by}} <h3><a href='{% url 'ans' id=item.id %}'>{{item.title}}</a></h3></p></li>
+{% endfor %}
+</ol>
+
+</div>
+</div>
+{% endblock %}
+
+

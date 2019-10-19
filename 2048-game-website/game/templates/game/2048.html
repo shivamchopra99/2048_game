@@ -1,0 +1,106 @@
+{% load staticfiles %}
+{% load material_form %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2048</title>
+	<link rel="stylesheet" href='{% static "game/css/2048.css" %}'
+	<script src="2048.js"></script>
+      <!--Import Google Icon Font-->
+      <script src='{% static "game/js/jquery-2.2.1.min.js" %}'></script>
+      <script src='{% static "game/js/2048.js" %}'></script>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      {% include 'material/includes/material_css.html' %}
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      <li><a href="/#">Hii {{request.user}}</a></li>
+      <li><a href='{% url 'play' %}'>How to Play!</a></li>
+      <li><a href='{% url 'change' %}'>Change Password</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      <li><a href="/#">Hii! {{request.user}}</a></li>
+      <li><a href="{% url 'play' %}">How to Play!</a></li>
+      <li><a href='{url 'change' %}'>Change Password</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class='row'>
+  <div class='col s12'>
+  </div>
+  </div>
+  <div class='row'>
+<div class='col s3 m2 l1 offset-s1 offset-m1 offset-l1' id="scorewrap">
+	<p class='colorch'>Score</p>
+	<div class='row'>
+	<div class='col s12' id="score">00</div>
+	</div>
+</div>
+<div class='col s3 m2 l1 offset-s5 offset-l8 offset-m5'>
+<div class='row'>
+<div class='col s12'id="reset"><a href="#" id="reset1">Reset</a></div>
+<div class='divider'></div>
+<div class='col s12' id='undo'><a href='#' id='undo1'>Undo</a></div>
+</div>
+</div>
+</div>
+
+</header>
+
+<main id="grid">
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+<div class="tile"></div>
+</main>
+  <div id="win"><p>congrats you made 2048</p><a href="#" id="yes">Continue to play</a></div>
+<div id="lose"><p id='over'>Game Over!</p>
+<p id='again'>
+<a href="#" id="res">Play Again</a></p></div>
+
+      {% include 'material/includes/material_js.html' %}
+      <script>
+      $( document ).ready(function(){
+
+        $(".button-collapse").sideNav();
+        $('.slider').slider({full_width: true});
+
+      })
+     
+      </script>
+<script>
+function onBodyLoad()
+{//console.log("bye");
+var p="{{request.user}}";
+  Game.init(p);
+}
+
+window.addEventListener('load',onBodyLoad);
+</script>
+</body>
+</html>

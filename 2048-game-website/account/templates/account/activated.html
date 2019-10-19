@@ -1,0 +1,8 @@
+{% extends 'game/index.html' %}
+{% block title %}activated{% endblock %}
+{% block content %}
+hii {{u.username}}
+Your account is active now.
+you can login from the link below.
+<a href='{% url 'login' %}'>Log In</a>
+{% endblock %}

@@ -1,0 +1,156 @@
+
+p{
+	margin:0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	color: blue;
+}
+#scorewrap{
+	text-align: center;
+	line-height: 15px;
+	background-color: brown;
+}
+#score{
+	font-size: 1rem;
+	text-align: center;
+	line-height: 10px;
+	background-color: brown;
+}
+#reset,#undo{
+    font-size: 1em;
+    line-height: 30px;
+    text-align: center;
+    background-color:brown;
+
+}
+#submit{
+	width:40%;
+	font-size: 1.5em;
+}
+
+#grid{
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	width:400px;
+	background-color: brown;
+	margin:0px auto;
+	padding: 3px 3px;
+}
+.tile{
+        height: 100px;
+        flex:0 0 23%;
+        margin:4px 0;
+        display: flex;
+        justify-content:center;
+        font-size: 2rem;
+        line-height: 100px;
+}
+.tile_0{
+	background-color: white;
+}
+.tile_2{
+	background-color: rgb(255,255,100);
+}
+.tile_4{
+	background-color:#ffd180;
+}
+.tile_8{
+	background-color:rgb(255,255,0);
+}
+.tile_16{
+	background-color: orange;
+}
+.tile_32{
+	background-color: #a1887f;
+}
+.tile_64{
+	background-color: #ff1744;
+}
+.tile_128{
+	background-color: orangered;
+}
+.tile_256{
+	background-color: tomato;
+}
+.tile_512{
+	background-color: #c0ca33;
+}
+.tile_1024{
+	background-color: #c51162;
+}
+.tile_2048{
+	background-color: #64b5f6;
+}
+.tile_4096{
+	background-color: green;
+}
+#win{
+	box-sizing:border-box;
+	position: absolute;
+	top:250px;
+	background-color: white;
+	left:35%;
+	width:30%;
+	font-size: 1rem;
+	border-width: 4px;
+	border-color:blue;
+	text-align: center;
+	line-height: 50px;
+	height: 200px;
+	display: none;
+}
+#chngesize{
+	font-size: 2rem;
+}
+#lose{
+	position: absolute;
+	box-sizing:border-box;
+	background-color:white;
+	line-height: 50px;
+	top:250px;
+	left:35%;
+	width:30%;
+	height:200px;
+	font-size: 1rem;
+	border-width: 4px;
+	border-color: blue;
+	text-align: center;
+	display: none;
+}
+#over{
+	font-size: 2rem;
+}
+.colorch{
+	color:white;
+}
+#reset1,#undo1{
+	color:white;
+}
+@media only screen and (max-width: 768px) {
+    #grid{
+        width: 70%;
+    }
+    .tile{
+    	height:75px;
+    	flex:0 0 24%;
+    	line-height: 75px;
+    	display: flex;
+    	font-size: 1rem;
+        justify-content:center;
+        margin:2px 0;
+    }
+    #over{
+    	font-size: 1rem;
+    }
+    #undo1,#rest1,#score{
+    	font-size: 1em;
+    }
+    #submit{
+    	width:80%;
+    }
+}

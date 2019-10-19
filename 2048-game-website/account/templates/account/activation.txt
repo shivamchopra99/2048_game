@@ -1,0 +1,4 @@
+hi {{u.username}}
+We have recieved your request.
+click on the given link or copy it to url to change password.
+http://127.0.0.1:8000/account/activate/{{u.id}}/{{otp}}/
